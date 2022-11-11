@@ -13,6 +13,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::controller(StudentController::class)->group(function () {
     Route::get('/student', 'index');
     Route::post('/student/insert', 'store');
+    Route::delete('/student/delete/{std}', 'deleteStudent');
+    Route::post('/student/update/{std}', 'updateStudent');
 });
 
 Route::post("/login",[App\Http\Controllers\AuthController::class,"login"]);
